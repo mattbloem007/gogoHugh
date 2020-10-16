@@ -7,7 +7,7 @@ import SEO from "../components/seo";
 import Banner from "../components/banner";
 import About from "../components/about";
 import Service from "../components/service";
-import Work from "../components/work";
+//import Work from "../components/work";
 import Blogs from "../components/blogs";
 import Testimonial from "../components/testimonial";
 import Contact from "../components/contact";
@@ -17,7 +17,7 @@ const IndexPage = ({ data }) => (
   <Layout header="home">
     <SEO
       title={data.contentfulAboutMe.designation}
-      keywords={[`Rohit Gupta`, `Frontend Developer`, `Developer`]}
+      keywords={[`Geoffrey Tracey`, `Sangoma`, `Tradtional Healer`]}
     />
     <Banner data={data.contentfulAboutMe}></Banner>
 
@@ -39,11 +39,11 @@ const IndexPage = ({ data }) => (
         return <Blogs data={data.allContentfulBlogs}></Blogs>;
       })}
 
-    {data.contentfulSiteInformation.menus
+    {/**{data.contentfulSiteInformation.menus
       .filter(item => item === "Work")
       .map(t => {
         return <Work data={data.allContentfulWorks}></Work>;
-      })}
+      })}*/}
 
     {data.contentfulSiteInformation.menus
       .filter(item => item === "Testimonials")
@@ -159,25 +159,6 @@ export const pageQuery = graphql`
           }
           avatarImage {
             fluid(maxWidth: 200) {
-              base64
-              aspectRatio
-              src
-              srcSet
-              srcWebp
-              srcSetWebp
-              sizes
-            }
-          }
-        }
-      }
-    }
-    allContentfulWorks {
-      edges {
-        node {
-          siteName
-          url
-          image {
-            fluid(maxWidth: 600) {
               base64
               aspectRatio
               src

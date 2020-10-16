@@ -3,6 +3,23 @@ import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { StaticQuery, graphql } from "gatsby";
 
+// {
+//   name: `twitter:card`,
+//   content: `summary`
+// },
+// {
+//   name: `twitter:creator`,
+//   content: data.contentfulSiteInformation.twiteerHandle
+// },
+// {
+//   name: `twitter:title`,
+//   content: title
+// },
+// {
+//   name: `twitter:description`,
+//   content: data.contentfulSiteInformation.siteDescription
+// }
+
 function SEO({ description, lang, meta, keywords, title, data }) {
   return (
     <StaticQuery
@@ -32,22 +49,7 @@ function SEO({ description, lang, meta, keywords, title, data }) {
                 property: `og:type`,
                 content: `website`
               },
-              {
-                name: `twitter:card`,
-                content: `summary`
-              },
-              {
-                name: `twitter:creator`,
-                content: data.contentfulSiteInformation.twiteerHandle
-              },
-              {
-                name: `twitter:title`,
-                content: title
-              },
-              {
-                name: `twitter:description`,
-                content: data.contentfulSiteInformation.siteDescription
-              }
+
             ]
               .concat(
                 keywords.length > 0
@@ -86,7 +88,7 @@ const detailsQuery = graphql`
     contentfulSiteInformation {
       siteName
       siteDescription
-      twiteerHandle
+
     }
   }
 `;

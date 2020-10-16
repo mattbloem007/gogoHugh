@@ -8,9 +8,9 @@ const { spaceId, accessToken } = process.env;
 
 module.exports = {
   siteMetadata: {
-    title: `Rohit Gupta`,
+    title: `Geoffrey Tracey`,
     description: `Personal Site`,
-    author: `@rohitguptab`
+    author: `@geoffreytracey`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -24,8 +24,8 @@ module.exports = {
     {
       resolve: "gatsby-source-contentful",
       options: {
-        spaceId,
-        accessToken
+        spaceId: "c1o3943dih0s",
+        accessToken: "ycdLy5Zcj4YA5KSzQtnz4FF7z6Rxh7QW2A-4KpSc730"
       }
     },
     `gatsby-transformer-sharp`,
@@ -34,8 +34,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Rohit Gupta`,
-        short_name: `Rohit Gupta`,
+        name: `Geoffrey Tracey`,
+        short_name: `Geoffrey Tracey`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#333`,

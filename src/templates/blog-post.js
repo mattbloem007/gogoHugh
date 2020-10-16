@@ -11,18 +11,17 @@ import Share from "../components/share";
 export default class blogPost extends Component {
   render() {
     const data = this.props.data.contentfulBlogs;
-    const disqusShortname = "RohitGupta";
+    const disqusShortname = "geoffreytracey";
     const disqusConfig = {
       identifier: data.id,
       title: data.title
     };
 
     const siteurl = this.props.data.contentfulSiteInformation.siteUrl + "/";
-    const twiteerhandle = this.props.data.contentfulSiteInformation
-      .twiteerHandle;
+    //const twiteerhandle = this.props.data.contentfulSiteInformation.twiteerHandle;
     const socialConfigss = {
       site: {
-        siteMetadata: { siteurl, twiteerhandle }
+        siteMetadata: { siteurl }
       },
       title: data.title,
       slug: data.slug
@@ -33,9 +32,9 @@ export default class blogPost extends Component {
         <SEO
           title={data.title}
           keywords={[
-            `Rohit Gupta`,
-            `Frontend Developer`,
-            `Developer`,
+            `Geoffrey Tracey`,
+            `Sangoma`,
+            `Healer`,
             `${data.title}`
           ]}
         />
@@ -64,7 +63,7 @@ export default class blogPost extends Component {
                 }}
               />
             </div>
-            <Share
+          {/**  <Share
               socialConfig={{
                 ...socialConfigss.site.siteMetadata.twiteerhandletitle,
                 config: {
@@ -72,7 +71,7 @@ export default class blogPost extends Component {
                   title: `${socialConfigss.title}`
                 }
               }}
-            />
+            />*/}
             <DiscussionEmbed
               shortname={disqusShortname}
               config={disqusConfig}
@@ -110,7 +109,7 @@ export const pageQuery = graphql`
     }
     contentfulSiteInformation {
       siteUrl
-      twiteerHandle
+
     }
   }
 `;
