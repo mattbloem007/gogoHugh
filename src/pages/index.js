@@ -115,7 +115,7 @@ export const pageQuery = graphql`
       }
       bannerList
     }
-    allContentfulService {
+    allContentfulService(filter: {node_locale: {eq: "en-US"}}) {
       edges {
         node {
           title
@@ -127,7 +127,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulBlogs(limit: 5, sort: {fields: createdAt, order: DESC}) {
+    allContentfulBlogs(limit: 5, sort: {fields: createdAt, order: DESC}, filter: {node_locale: {eq: "en-US"}}) {
       edges {
         node {
           title
@@ -147,7 +147,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulTestimonials {
+    allContentfulTestimonials(filter: {node_locale: {eq: "en-US"}}) {
       edges {
         node {
           name
